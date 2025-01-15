@@ -1,606 +1,941 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <title>3-Minute FIT Challenge</title>
-  <!-- Mobile Responsive Meta -->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  
-  <!-- Fonts (Example: Google Fonts) -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap">
-  
+  <meta charset="UTF-8">
+  <title>Autymate Mega Menu</title>
+
+  <!-- Font Awesome Pro Kit (replace with your kit link) -->
+  <script src="https://kit.fontawesome.com/10f402bc2f.js" crossorigin="anonymous"></script>
+
   <style>
     :root {
-      --primary-blue: #1239FF;
-      --secondary-green: #10B981;
-      --alert-orange: #F59E0B;
-      --bg-light-blue: #F0F4FF;
-      --font-sans: 'Inter', sans-serif;
+      --brand-blue: #1239FF;
+      --brand-black: #180D43;
+      --brand-bg: #F0F4FF;
+      --brand-green: #10B981;
+      --brand-orange: #F59E0B;
+      --gray-light: #E5E7EB;
+      --gray-dark: #6B7280;
     }
-    
+
+    /* RESET */
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
     }
-    
     body {
-      font-family: var(--font-sans);
-      background-color: var(--bg-light-blue);
-      color: #333;
-      line-height: 1.6;
-      scroll-behavior: smooth;
+      font-family: sans-serif;
+      background-color: #ffffff;
+      color: var(--brand-black);
     }
-    
-    header, main, footer {
-      width: 100%;
-      padding: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    /* ----------------- Header / Navigation ----------------- */
+    /* HEADER - WHITE, MONDAY.COM-LIKE */
     header {
+      position: relative;
+      z-index: 9999;
+      width: 100%;
+      background-color: #ffffff;
+      padding: 0.5rem 1rem;
+      border-bottom: 1px solid var(--gray-light);
+    }
+    .header-inner {
       display: flex;
+      align-items: center;
       justify-content: space-between;
+      /* No max-width here, so the logo & nav can stretch left & right naturally */
+    }
+
+    /* LOGO ON LEFT */
+    .logo-left img {
+      height: 45px;
+      display: block;
+    }
+
+    /* NAV ON THE RIGHT */
+    nav.main-nav {}
+    .nav-list {
+      list-style: none;
+      display: flex;
+      gap: 2rem;
       align-items: center;
-      background-color: #fff;
-      border-radius: 8px;
-      margin-top: 1rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     }
-
-    .logo {
-      font-weight: 700;
-      font-size: 1.5rem;
-      color: var(--primary-blue);
-    }
-
-    nav a {
-      text-decoration: none;
-      margin-left: 1rem;
-      color: #555;
-      font-weight: 600;
-    }
-
-    nav a:hover {
-      color: var(--primary-blue);
-    }
-    
-    /* ----------------- Hero Section ----------------- */
-    .hero {
-      background: linear-gradient(
-        135deg,
-        var(--primary-blue) 0%,
-        #5b78ff 100%
-      );
-      border-radius: 8px;
-      color: #fff;
-      margin-top: 1.5rem;
-      text-align: center;
-      padding: 3rem 2rem;
+    .nav-list > li {
       position: relative;
-      overflow: hidden;
     }
-
-    .hero h1 {
-      font-size: 2.5rem;
-      font-weight: 700;
-      margin-bottom: 1rem;
-      line-height: 1.2;
-    }
-
-    .hero h2 {
-      font-size: 1.3rem;
-      font-weight: 400;
-      margin-bottom: 2rem;
-      max-width: 650px;
-      margin: 0.75rem auto 2rem;
-    }
-
-    .hero button {
-      background-color: #fff;
-      color: var(--primary-blue);
-      border: none;
-      padding: 1rem 2rem;
-      font-size: 1rem;
+    .nav-list > li > a {
       font-weight: 600;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.2s;
+      color: var(--brand-black);
+      padding: 0.5rem 0;
+      transition: color 0.2s;
+    }
+    /* Hover on top menu item: color changes to brand blue */
+    .nav-list > li:hover > a {
+      color: var(--brand-blue);
     }
 
-    .hero button:hover {
-      transform: scale(1.05);
-    }
-    
-    .trust-badge {
-      margin-top: 1rem;
-      font-size: 0.95rem;
-      font-weight: 600;
-      background-color: rgba(255,255,255,0.15);
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-    }
-
-    /* ----------------- Problem-Agitation-Solution Intro ----------------- */
-    .pas-intro {
-      background-color: #fff;
-      padding: 2rem;
-      margin-top: 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-    .pas-intro h3 {
-      font-size: 1.75rem;
-      margin-bottom: 1rem;
-      color: var(--primary-blue);
-    }
-    .pas-intro p {
-      font-size: 1rem;
-      margin-bottom: 1rem;
-      line-height: 1.6;
-    }
-
-    .pas-intro a.challenge-btn {
-      display: inline-block;
-      background-color: var(--primary-blue);
+    /* CTA BUTTON - "Get Started Free (3-Min Setup)" */
+    .cta-button {
+      background-color: var(--brand-blue);
       color: #fff;
-      padding: 0.75rem 1.5rem;
-      margin-top: 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.3s;
+      padding: 0.7rem 1.4rem; 
+      border-radius: 5px;
+      font-weight: bold;
+      font-size: 0.9rem;
+      transition: background-color 0.2s, color 0.2s;
+    }
+    .cta-button:hover {
+      background-color: var(--brand-black);
     }
 
-    .pas-intro a.challenge-btn:hover {
-      background-color: #091f80;
+    /* MEGA MENU - FULL WIDTH, STARTING FROM LEFT EDGE */
+    .has-mega:hover .mega-menu {
+      display: block;
     }
-
-    /* ----------------- How It Works Section ----------------- */
-    .section {
-      margin-top: 2rem;
-    }
-
-    .section h2.section-title {
-      font-size: 2rem;
-      margin-bottom: 1rem;
-      text-align: center;
-      color: var(--primary-blue);
-    }
-
-    .how-it-works {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 1.5rem;
-    }
-
-    .step-card {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 1.5rem;
-      text-align: center;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-    }
-
-    .step-card h3 {
-      color: var(--primary-blue);
-      margin-bottom: 0.75rem;
-    }
-
-    .step-icon {
-      font-size: 2rem;
-      margin-bottom: 0.5rem;
-      color: var(--secondary-green);
-    }
-
-    /* ----------------- Guarantees ----------------- */
-    .guarantees {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-    }
-
-    .guarantee-card {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .guarantee-card p {
-      margin-top: 0.75rem;
-    }
-
-    /* ----------------- Benefits ----------------- */
-    .benefits-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-      margin-top: 2rem;
-    }
-
-    .benefit-card {
-      background-color: #fff;
-      padding: 1.5rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    /* ----------------- Interactive Challenge Section ----------------- */
-    .challenge-section {
-      background-color: #fff;
-      border-radius: 8px;
-      padding: 2rem;
-      margin-top: 2rem;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      text-align: center;
-    }
-
-    .progress-bar {
-      display: flex;
-      gap: 1rem;
-      justify-content: center;
-      margin: 1rem 0;
-    }
-
-    .progress-step {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      background-color: var(--primary-blue);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 600;
-    }
-
-    .ai-assistant {
-      margin-top: 1rem;
-      display: inline-block;
-      background-color: var(--secondary-green);
-      color: #fff;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: transform 0.2s;
-    }
-
-    .ai-assistant:hover {
-      transform: scale(1.05);
-    }
-
-    /* ----------------- Testimonials ----------------- */
-    .testimonials-section {
-      margin-top: 2rem;
-    }
-    
-    .testimonials-slider {
-      position: relative;
-      overflow: hidden;
-      border-radius: 8px;
-      background-color: #fff;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-      width: 100%;
-      height: 250px;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-    }
-
-    .testimonial {
-      width: 100%;
-      padding: 2rem;
-      text-align: center;
-      opacity: 0;
+    .mega-menu {
+      display: none;
       position: absolute;
-      transition: opacity 0.5s;
-    }
-
-    .testimonial.active {
-      opacity: 1;
-      position: relative;
-    }
-
-    .testimonials-nav {
-      display: flex;
-      justify-content: center;
-      margin-top: 1rem;
-    }
-
-    .testimonial-btn {
-      background-color: var(--primary-blue);
-      color: #fff;
-      border: none;
-      padding: 0.5rem 1rem;
-      margin: 0 0.5rem;
-      cursor: pointer;
-      border-radius: 6px;
-      transition: background-color 0.2s;
-    }
-
-    .testimonial-btn:hover {
-      background-color: #091f80;
-    }
-
-    /* ----------------- Footer ----------------- */
-    footer {
-      margin-top: 3rem;
-      text-align: center;
+      top: 100%;
+      left: 0;        /* far left edge of the screen */
+      right: 0;       /* far right edge of the screen */
+      width: auto;    /* let left & right define the width */
+      min-height: 200px; /* a bit of baseline height if needed */
       background-color: #fff;
-      padding: 1rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+      z-index: 99999;
+      padding: 2rem 1rem;  /* vertical/horizontal padding inside */
+      border-bottom: 1px solid var(--gray-light);
     }
 
-    .footer-links {
+    /* Because we want the text to start at the left edge, 
+       we can use a container with minimal or no side margin. */
+    .mega-menu-content {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(220px, 1fr));
+      gap: 2rem;
+      /* no max-width and no margin: 0 auto -> text is flush with left edge */
+    }
+
+    /* COLUMN HEADINGS */
+    .mega-menu-column h3 {
+      font-size: 1.15rem;
+      margin-bottom: 0.25rem;
+      color: var(--brand-black);
+    }
+    .mega-menu-column p.column-subtitle {
+      font-size: 0.9rem;
+      color: var(--gray-dark);
+      margin-bottom: 1rem;
+    }
+
+    /* MENU ITEMS */
+    .mega-menu-column ul {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    .menu-item {
       display: flex;
-      justify-content: center;
-      gap: 1rem;
-      margin-top: 1rem;
+      gap: 0.5rem;
+      padding: 0.5rem 0;
+      line-height: 1.3;
     }
-
-    .footer-links a {
-      color: var(--primary-blue);
-      text-decoration: none;
-      font-weight: 600;
+    .menu-item-icon {
+      flex-shrink: 0;
+      font-size: 1.3rem;
+      color: var(--brand-blue);
+      margin-top: 0.2rem;
     }
-
-    .footer-links a:hover {
-      text-decoration: underline;
+    .menu-item-content {
+      display: flex;
+      flex-direction: column;
     }
-
-    .footer-cta {
-      background-color: var(--primary-blue);
-      color: #fff;
-      display: inline-block;
-      margin-top: 1rem;
-      padding: 0.5rem 1rem;
-      border-radius: 6px;
-      text-decoration: none;
-      font-weight: 600;
-      transition: background-color 0.2s;
+    .menu-item-title a {
+      font-weight: bold;
+      font-size: 0.95rem;
+      color: var(--brand-black);
+      transition: text-decoration 0.2s;
     }
-
-    .footer-cta:hover {
-      background-color: #091f80;
+    .menu-item-title a:hover {
+      text-decoration: underline; /* underline on hover for sublinks */
     }
-
-    /* ------------- Responsive Adjustments ------------- */
-    @media (max-width: 768px) {
-      .hero h1 {
-        font-size: 2rem;
-      }
-      .hero h2 {
-        font-size: 1.1rem;
-      }
-      header, main, footer {
-        padding: 1rem;
-      }
+    .menu-item-subtitle {
+      font-size: 0.85rem;
+      color: var(--gray-dark);
+    }
+    .highlight-star {
+      color: var(--brand-orange);
+      margin-left: 0.25rem;
+    }
+    .patent-note {
+      font-style: italic;
+      font-size: 0.8rem;
+      color: var(--gray-dark);
+      margin-bottom: 1rem;
     }
 
   </style>
 </head>
 <body>
 
-  <!-- ========== HEADER ========== -->
-  <header>
-    <div class="logo">Autymate</div>
-    <nav>
-      <a href="#how-it-works">How It Works</a>
-      <a href="#testimonials">Testimonials</a>
-      <a href="#footer">Contact</a>
+<header>
+  <div class="header-inner">
+    <!-- LOGO on LEFT linking to index.html -->
+    <div class="logo-left">
+      <a href="index.html">
+        <img 
+          src="https://autymate-docs.s3.amazonaws.com/asc/AutyScorecardLogo.png.png"
+          alt="Autymate Logo"
+        />
+      </a>
+    </div>
+
+    <!-- NAV on RIGHT -->
+    <nav class="main-nav">
+      <ul class="nav-list">
+
+        <!-- Achieve Goals -->
+        <li class="has-mega">
+          <a href="#">Achieve Goals</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <!-- Column 1 -->
+              <div class="mega-menu-column">
+                <h3>Meet the World’s First AI Strategist</h3>
+                <p class="column-subtitle">Empower Accountability — Everyone commits, and everyone wins!</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-exclamation-triangle menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="conquer-your-biggest-business-fears.html">
+                          Conquer Your Biggest Business Fears
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        “Worried your business won’t keep up with AI? Identify your biggest fear…”
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-search menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="goal-finder-pinpoint-your-pain-solve-it.html">
+                          Goal Finder: Pinpoint Your Pain &amp; Solve It
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Identify pain points and instantly get tailored Scorecards + AI Strategies.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-plug menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="start-with-app-500-apps.html">
+                          Start with App (500+ Apps)
+                        </a>
+                        <span class="highlight-star">⭐</span>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Connect any app to uncover pain points and AI-powered solutions.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-tachometer-alt menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="360-snapshot-daily-fitness-tracker.html">
+                          360 Snapshot &amp; Daily Fitness Tracker
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        All-in-one dashboard for real-time Finance, Marketing, and Operations insights.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 2 -->
+              <div class="mega-menu-column">
+                <h3>Take the FIT Business Challenge</h3>
+                <p class="patent-note">*Patent Pending*</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-dumbbell menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="what-is-the-fit-challenge.html">
+                          What Is the FIT Challenge?
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Focus, Implement, and Team Accountability to fix pains fast.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-compass menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="strategy-finder-financial-operations-marketing.html">
+                          Strategy Finder Financial Operations Marketing
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        AI-driven solutions for Finance, Marketing, and Operations.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-table menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="scorecard-finder.html">Scorecard Finder</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Instantly launch tailored Scorecards for any KPI.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-gamepad menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="gamify-your-goals-with-ai.html">
+                          Gamify Your Goals with AI
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Weekly challenges and badges make AI adoption engaging.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-lock menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="security.html">Security</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Risk-free results with bulletproof data protection.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 3 -->
+              <div class="mega-menu-column">
+                <h3>Platform Features</h3>
+                <p class="column-subtitle">Discover robust tools to accelerate your business success.</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-crosshairs menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="my-goals-dashboard.html">My Goals Dashboard</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Centralized view to track key metrics.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-table-list menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="my-scorecard.html">My Scorecard</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Monitor progress with a real-time overview.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-robot menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="my-ai-strategist.html">My AI Strategist</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Intelligent recommendations for every department.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-file-lines menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="reports.html">Reports</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Generate instant updates for actionable insights.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-database menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="data-standardization.html">Data Standardization</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Organize info to ensure consistent, accurate metrics.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-plug menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="integrations.html">Integrations</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Sync all your apps for seamless operations.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-th-large menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="apps.html">Apps</a>
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-search-plus menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="4-level-drill-down.html">4 Level Drill Down</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Drill-down from overview to data.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-heartbeat menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="data-health-check.html">Data Health Check</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Instantly verify data integrity in every Scorecard.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-chart-line menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="benchmarking-progress.html">Benchmarking Progress</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Measure performance against benchmarks for continual growth.
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-sync-alt menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="data-sync-api.html">Data Sync API</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Automate data flow for uninterrupted accountability.
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div><!-- end .mega-menu-content -->
+          </div><!-- end .mega-menu -->
+        </li>
+        <!-- End Achieve Goals -->
+
+        <!-- Solutions -->
+        <li class="has-mega">
+          <a href="#">Solutions</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <!-- By Apps -->
+              <div class="mega-menu-column">
+                <h3>By Apps <i class="fa-solid fa-th-large"></i></h3>
+                <p class="column-subtitle">How we help you unify your data, apps, and locations.</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-file-invoice-dollar menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="quickbooks.html">QuickBooks</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Real-time KPI financial tracking
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-user-gear menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="adp-v2.html">ADP v2</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Streamlined payroll and HR
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-cloud-arrow-up menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="salesforce-v2.html">Salesforce v2</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Get KPIs accountability on leads and deals instantly
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-bullhorn menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="hubspot-v2.html">HubSpot v2</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Get accountability on marketing, sales, and CRM data
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-th-list menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="explore-500-apps.html">Explore 500 Apps</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Connect your favorite; manage biz in one place
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- By Company Size -->
+              <div class="mega-menu-column">
+                <h3>By Company Size <i class="fa-solid fa-building"></i></h3>
+                <p class="column-subtitle">Scale to meet your unique organizational needs.</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-store menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="franchising-multi-location.html">
+                          Franchising Multi Location
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Gain visibility and control at scale
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <!-- NEW ICON for Small Business: fa-shop -->
+                    <i class="fa-solid fa-shop menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="small-business.html">Small Business</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Manage your entire business in one place
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-chart-line menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="venture-capital-page2.html">Venture Capital Page2</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        See your portfolio at a glance and drill down
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-calculator menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="cpa-and-accounting-firms.html">
+                          CPA and Accounting Firms
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        See all your clients and the health of their books in one dashboard
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- By Industry -->
+              <div class="mega-menu-column">
+                <h3>By Industry <i class="fa-solid fa-industry"></i></h3>
+                <p class="column-subtitle">Tailored solutions that fit your specific market.</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-burger menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="qsr.html">QSR</a>
+                      </div>
+                      <div class="menu-item-subtitle">Optimize quick-service operations daily</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-utensils menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="restaurants.html">Restaurants</a>
+                      </div>
+                      <div class="menu-item-subtitle">Coordinate staff, orders, and inventory</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-bed menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="hospitality-page.html">Hospitality Page</a>
+                      </div>
+                      <div class="menu-item-subtitle">Deliver top-tier guest experiences</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-cart-shopping menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="retail-page.html">Retail Page</a>
+                      </div>
+                      <div class="menu-item-subtitle">Track sales, supply, and seasonal trends</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-user-tie menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="personal-services.html">Personal Services</a>
+                      </div>
+                      <div class="menu-item-subtitle">Manage appointments and clients</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-heart-pulse menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="fitness.html">Fitness</a>
+                      </div>
+                      <div class="menu-item-subtitle">Grow memberships and simplify operations</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-house-chimney menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="home-services.html">Home Services</a>
+                      </div>
+                      <div class="menu-item-subtitle">Schedule and manage on-site tasks</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-building-circle-check menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="business-services.html">Business Services</a>
+                      </div>
+                      <div class="menu-item-subtitle">Centralize projects for success</div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-ellipsis menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="other-industries.html">Other Industries</a>
+                      </div>
+                      <div class="menu-item-subtitle">Adapt to your unique business goals</div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div><!-- .mega-menu-content -->
+          </div><!-- .mega-menu -->
+        </li>
+        <!-- End Solutions -->
+
+        <!-- Resources -->
+        <li class="has-mega">
+          <a href="#">Resources</a>
+          <div class="mega-menu">
+            <div class="mega-menu-content">
+              <!-- Column 1: Learn -->
+              <div class="mega-menu-column">
+                <h3>Learn</h3>
+                <p class="column-subtitle">
+                  Educational resources to help you master AI Strategist 3-step FIT process
+                </p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-circle-info menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="about-us.html">About Us</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Our story, mission, and vision
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-comments menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="customer-stories.html">Customer Stories</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Real-world success from our platform
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-pen-nib menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="blog.html">Blog</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Insights, tips, and best practices
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-bolt menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="whats-new.html">What’s New</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Latest features and improvements
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-book-open menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="guides.html">Guides</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Go deep with dedicated guidance
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-map-signs menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="product-tour.html">Product Tour</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Take a guided journey through our platform
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 2: Support -->
+              <div class="mega-menu-column">
+                <h3>Support</h3>
+                <p class="column-subtitle">Round-the-clock help options</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-circle-question menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="help-center.html">Help Center</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Access in-depth guides and FAQs
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-headset menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="8-support-options.html">8 Support Options</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Round-the-clock assistance
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-user-graduate menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="meet-an-ai-strategist-expert.html">
+                          Meet an AI Strategist Expert
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Free 30-minute consult to optimize your goals
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-calendar-alt menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="events-and-webinars.html">Events and Webinars</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Join live or watch on-demand
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-graduation-cap menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="ai-strategist-learn.html">AI Strategist Learn</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Online courses to master goal-driven AI skills
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-people-group menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="ai-strategist-community.html">AI Strategist Community</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Connect and learn with fellow users
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+
+              <!-- Column 3: Build -->
+              <div class="mega-menu-column">
+                <h3>Build</h3>
+                <p class="column-subtitle">Create custom solutions in minutes</p>
+                <ul>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-table-list menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="scorecards-builder.html">Scorecards Builder</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Track business progress at a glance
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-robot menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="ai-strategies-builder.html">AI Strategies Builder</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Leverage data-driven tactics for success
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-plug menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="app-connections-builder.html">
+                          App Connections Builder
+                        </a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Easily link all your essential business apps
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-code-branch menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="integrations-builder.html">Integrations Builder</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Save time; automate manual processes
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-people-carry menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="builder-program.html">Builder Program</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Earn revenue by helping others get FIT
+                      </div>
+                    </div>
+                  </li>
+                  <li class="menu-item">
+                    <i class="fa-solid fa-certificate menu-item-icon"></i>
+                    <div class="menu-item-content">
+                      <div class="menu-item-title">
+                        <a href="get-certified.html">Get Certified</a>
+                      </div>
+                      <div class="menu-item-subtitle">
+                        Enhance your skillset and credibility
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div><!-- .mega-menu-content -->
+          </div><!-- .mega-menu -->
+        </li>
+        <!-- End Resources -->
+
+        <!-- Single Links -->
+        <li><a href="enterprise.html">Enterprise</a></li>
+        <li><a href="pricing-page-2.html">Pricing</a></li>
+        <li><a href="#">Log In</a></li>
+        <li>
+          <a href="get-started-free-3-min-setup.html" class="cta-button">
+            Get Started Free (3-Min Setup)
+          </a>
+        </li>
+      </ul>
     </nav>
-  </header>
+  </div>
+</header>
 
-  <!-- ========== MAIN CONTENT ========== -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <h1>Hit Goals Faster with AI-Powered Strategies</h1>
-      <h2>In less than 3 minutes, discover your focus goal, winning strategy, and structured accountability.</h2>
-      <button onclick="scrollToSection('#signup')">Start the FIT Challenge Now</button>
-      <div class="trust-badge">No Credit Card Required—7-Day Free Trial!</div>
-    </section>
-
-    <!-- Problem-Agitation-Solution Intro -->
-    <div class="pas-intro">
-      <h3>One Simple Step to Transform Your Business</h3>
-      <p><strong>Most businesses face:</strong></p>
-      <ul style="margin-left: 1.2rem; margin-bottom: 1rem;">
-        <li>Disconnected teams.</li>
-        <li>Undefined goals.</li>
-        <li>Strategies that fall flat.</li>
-      </ul>
-      <p><strong>Enter the 3-Minute FIT Challenge</strong>—your fast track to clarity, alignment, and unstoppable momentum. Turn complexity into focus, chaos into action, and hesitation into results—all in just 3 minutes a week.</p>
-      <p>It’s time to stop spinning wheels and start building momentum.</p>
-      <a class="challenge-btn" href="#signup">Start the FIT Challenge for Free!</a>
-    </div>
-
-    <!-- Why Businesses Struggle -->
-    <div class="pas-intro" style="margin-top: 2rem;">
-      <h3>Why Businesses Struggle</h3>
-      <p><strong>Does This Sound Like You?</strong></p>
-      <p>Are you stuck in the grind, working harder but barely moving the needle?</p>
-      <p><strong>Here’s why most businesses fall short:</strong></p>
-      <ul style="margin-left: 1.2rem; margin-bottom: 1rem;">
-        <li>❌ No clear priorities.</li>
-        <li>❌ Misaligned teams chasing different goals.</li>
-        <li>❌ Zero accountability, leading to missed targets.</li>
-        <li>❌ Complex strategies that never take off.</li>
-      </ul>
-      <p>It’s time to stop the chaos.</p>
-      <p><strong>The FIT Challenge changes everything with a proven, repeatable system:</strong></p>
-      <ul style="margin-left: 1.2rem;">
-        <li>✅ Laser-focused priorities.</li>
-        <li>✅ Seamless team alignment.</li>
-        <li>✅ Measurable accountability driving real progress.</li>
-        <li>✅ Simplicity that delivers results—week after week.</li>
-      </ul>
-      <p>It’s time to turn things around.</p>
-      <a class="challenge-btn" href="#signup">Take the Challenge Today!</a>
-    </div>
-
-    <!-- How It Works Section -->
-    <section id="how-it-works" class="section">
-      <h2 class="section-title">How the FIT Challenge Works</h2>
-      <p style="text-align:center;">Our 3-step F–I–T process: Focus, Implement, Teamwork.</p>
-      <div class="how-it-works">
-        <div class="step-card">
-          <div class="step-icon">F</div>
-          <h3>Set Clear Focus Goals (With AI)</h3>
-          <p>Identify the most important goal for the week. Let AI guide your priorities.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-icon">I</div>
-          <h3>Implement AI Strategies</h3>
-          <p>Get a custom plan tailored to your business—delivered by your AI strategist.</p>
-        </div>
-        <div class="step-card">
-          <div class="step-icon">T</div>
-          <h3>Teamwork Accountability</h3>
-          <p>Structured check-ins ensure your entire team is on the same page and hitting goals.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Guarantees Section -->
-    <section class="section">
-      <h2 class="section-title">Our Promises to You</h2>
-      <div class="guarantees">
-        <div class="guarantee-card">
-          <img src="https://picsum.photos/80/80?random=1" alt="Guarantee Icon" style="border-radius: 50%;">
-          <p><strong>In 3 minutes or less</strong>, get a strategy and accountability backed by research.</p>
-        </div>
-        <div class="guarantee-card">
-          <img src="https://picsum.photos/80/80?random=2" alt="Guarantee Icon" style="border-radius: 50%;">
-          <p><strong>Boost goal achievement by 95%</strong> with our AI strategist.</p>
-        </div>
-        <div class="guarantee-card">
-          <img src="https://picsum.photos/80/80?random=3" alt="Guarantee Icon" style="border-radius: 50%;">
-          <p><strong>No Credit Card Required</strong>—7-Day Free Trial</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Benefits Section -->
-    <section class="section">
-      <h2 class="section-title">Key Benefits</h2>
-      <div class="benefits-grid">
-        <div class="benefit-card">
-          <img src="https://picsum.photos/150/100?random=4" alt="AI Strategy" style="width:100%; border-radius: 6px;">
-          <h4>AI-Powered Strategy</h4>
-          <p>Personalized insights for your specific business challenges.</p>
-        </div>
-        <div class="benefit-card">
-          <img src="https://picsum.photos/150/100?random=5" alt="Accountability" style="width:100%; border-radius: 6px;">
-          <h4>Structured Accountability</h4>
-          <p>Weekly check-ins & team alignment to guarantee forward momentum.</p>
-        </div>
-        <div class="benefit-card">
-          <img src="https://picsum.photos/150/100?random=6" alt="Dashboards" style="width:100%; border-radius: 6px;">
-          <h4>Create Dashboards Fast</h4>
-          <p>Easily build real-time dashboards in 3 minutes or less.</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- Interactive Challenge Section -->
-    <section class="challenge-section">
-      <h2 style="color: var(--primary-blue); font-size: 1.75rem;">Ready to Try the 3-Minute FIT Challenge?</h2>
-      <p>Experience the F–I–T steps in real-time with AI guidance.</p>
-      <div class="progress-bar">
-        <div class="progress-step">F</div>
-        <div class="progress-step">I</div>
-        <div class="progress-step">T</div>
-      </div>
-      <div class="ai-assistant" onclick="alert('Welcome to the AI Assistant! Your personalized strategy awaits.')">
-        <strong>AI Assistant</strong> — Click to Start
-      </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section id="testimonials" class="testimonials-section section">
-      <h2 class="section-title">Testimonials & Proof</h2>
-      <p style="text-align:center; margin-bottom: 1rem;">“Backed by Research: Boost Goal Achievement by 95%.”</p>
-      <div class="testimonials-slider" id="testimonials-slider">
-        <div class="testimonial active">
-          <p><em>"Within one week, our team was laser-focused and actually hitting the targets we set!"</em></p>
-          <h4>- Alex, CEO of GrowthCorp</h4>
-        </div>
-        <div class="testimonial">
-          <p><em>"The AI strategist nailed our weekly plan in minutes—best ROI I've seen."</em></p>
-          <h4>- Jordan, Marketing Director</h4>
-        </div>
-        <div class="testimonial">
-          <p><em>"We've tried countless systems. This one delivers real accountability and real results."</em></p>
-          <h4>- Tasha, Operations Manager</h4>
-        </div>
-      </div>
-      <div class="testimonials-nav">
-        <button class="testimonial-btn" onclick="prevTestimonial()">&laquo; Prev</button>
-        <button class="testimonial-btn" onclick="nextTestimonial()">Next &raquo;</button>
-      </div>
-    </section>
-
-    <!-- Signup Anchor (Scroll Target) -->
-    <section id="signup" class="pas-intro" style="margin-top: 2rem;">
-      <h3>Ready to Hit Goals Faster?</h3>
-      <p><strong>Your Breakthrough Starts Now.</strong></p>
-      <p>Join the 3-Minute FIT Challenge for free. Get clarity, AI-powered strategies, and unstoppable progress in minutes!</p>
-      <a class="challenge-btn" href="#footer">Join Now!</a>
-    </section>
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer id="footer">
-    <p>&copy; 2025 Autymate. All rights reserved.</p>
-    <div class="footer-links">
-      <a href="#faq">FAQ</a>
-      <a href="#contact">Contact</a>
-      <a href="#privacy">Privacy Policy</a>
-      <a href="#social">Social Media</a>
-    </div>
-    <a class="footer-cta" href="#signup">Ready to Hit Goals Faster? Join Now!</a>
-  </footer>
-
-  <script>
-    // Smooth Scroll to an element
-    function scrollToSection(id) {
-      document.querySelector(id).scrollIntoView({ behavior: 'smooth' });
-    }
-
-    // Simple Testimonial Slider
-    const testimonials = document.querySelectorAll('.testimonial');
-    let currentTestimonial = 0;
-
-    function showTestimonial(index) {
-      testimonials.forEach((t, i) => {
-        t.classList.remove('active');
-        if (i === index) {
-          t.classList.add('active');
-        }
-      });
-    }
-
-    function nextTestimonial() {
-      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    }
-
-    function prevTestimonial() {
-      currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
-      showTestimonial(currentTestimonial);
-    }
-  </script>
+<main style="padding: 2rem;">
+  <h1>Your Page Content Here</h1>
+  <p>This is the main section of your page. The top bar is white; the mega menu is fully left-aligned, like Zapier.</p>
+</main>
 
 </body>
 </html>
