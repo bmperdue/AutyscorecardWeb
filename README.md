@@ -1,2 +1,0 @@
-# AutyscorecardWeb
-Website prototyping.
