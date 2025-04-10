@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auty Scorecard Battle Card</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .header {
+            background: linear-gradient(135deg, #3498db, #1a5276);
+            color: white;
+            padding: 30px;
+            border-radius: 8px 8px 0 0;
+            text-align: center;
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 36px;
+        }
+        .subheader {
+            font-size: 18px;
+            margin-top: 10px;
+            opacity: 0.9;
+        }
+        .tagline {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: center;
+            font-size: 20px;
+            font-weight: 500;
+            border-bottom: 1px solid #e9ecef;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 8px 8px;
+            overflow: hidden;
+        }
+        .comparison-table th {
+            background-color: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            border-bottom: 2px solid #dee2e6;
+        }
+        .comparison-table td {
+            padding: 15px;
+            border-bottom: 1px solid #dee2e6;
+        }
+        .comparison-table tr:last-child td {
+            border-bottom: none;
+        }
+        .feature-name {
+            font-weight: 600;
+            min-width: 240px;
+        }
+        .feature-description {
+            color: #555;
+            font-size: 14px;
+        }
+        .check-yes {
+            color: #28a745;
+            font-size: 22px;
+            text-align: center;
+        }
+        .check-no {
+            color: #dc3545;
+            font-size: 22px;
+            text-align: center;
+        }
+        .check-partial {
+            color: #ffc107;
+            font-size: 22px;
+            text-align: center;
+        }
+        .value-prop {
+            background-color: #e8f4fd;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            border-left: 5px solid #3498db;
+        }
+        .value-prop h2 {
+            color: #2c3e50;
+            margin-top: 0;
+        }
+        .benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin: 30px 0;
+        }
+        .benefit-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .benefit-card h3 {
+            color: #3498db;
+            margin-top: 0;
+        }
+        .customer-quote {
+            font-style: italic;
+            background-color: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 5px solid #6c757d;
+        }
+        .category {
+            background-color: #f1f8ff;
+            font-weight: 600;
+            color: #0366d6;
+        }
+        .pricing-box {
+            background-color: #f8f9fa;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            text-align: center;
+            border: 1px solid #dee2e6;
+        }
+        .price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #28a745;
+        }
+        .competitor-price {
+            font-size: 32px;
+            font-weight: bold;
+            color: #dc3545;
+        }
+        .guarantee {
+            background-color: #e8f4fd;
+            padding: 20px;
+            margin: 30px 0;
+            border-radius: 8px;
+            border: 1px solid #b8daff;
+        }
+        .guarantee h2 {
+            color: #004085;
+            margin-top: 0;
+        }
+        .guarantee ul {
+            padding-left: 20px;
+        }
+        .guarantee li {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>Auty Scorecard Battle Card</h1>
+            <div class="subheader">The Complete Business Intelligence Solution for Multi-Location Businesses</div>
+        </div>
+        
+        <div class="tagline">
+            "Your Business Coach in a Box" — Skip $2,000-$5,000 in monthly coaching fees
+        </div>
+        
+        <div class="value-prop">
+            <h2>Why Auty Scorecard Outperforms the Competition</h2>
+            <p>Auty Scorecard combines the power of AI, intuitive dashboards, and multi-location consolidation to give you complete visibility and control of your business at a fraction of the cost of traditional solutions.</p>
+        </div>
+        
+        <table class="comparison-table">
+            <thead>
+                <tr>
+                    <th>Key Features</th>
+                    <th>Auty Scorecard</th>
+                    <th>Qvinci</th>
+                    <th>ProfitKeeper</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr class="category">
+                    <td colspan="4">Data Integration & Management</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">AI-Powered Data Mapping
+                        <div class="feature-description">Intelligent mapping of disparate accounts into unified structure</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-partial">△</td>
+                    <td class="check-no">✗</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Data Health Check
+                        <div class="feature-description">Automatic data scanning with color-coded accuracy dashboard</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-partial">△</td>
+                    <td class="check-partial">△</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Multi-Location Consolidation
+                        <div class="feature-description">Centralize data from multiple stores with consistent KPIs</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-yes">✓</td>
+                </tr>
+                
+                <tr class="category">
+                    <td colspan="4">Visualization & Analysis</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Drag-and-Drop Builder
+                        <div class="feature-description">Create custom dashboards without coding skills</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-no">✗</td>
+                    <td class="check-partial">△</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">4-Level Drill Down
+                        <div class="feature-description">From high-level overview to transaction-level details</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-partial">△</td>
+                    <td class="check-no">✗</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Multiple Scorecard Views
+                        <div class="feature-description">Last 4-Period, Grid, Tile, and Map Views</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-partial">△</td>
+                    <td class="check-partial">△</td>
+                </tr>
+                
+                <tr class="category">
+                    <td colspan="4">Business Intelligence</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">360° Biz Snapshot
+                        <div class="feature-description">Marketing, Financial, and Operational data in one command center</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-no">✗</td>
+                    <td class="check-no">✗</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Benchmarking with Exception Handling
+                        <div class="feature-description">Compare locations with ability to exclude bad data</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-partial">△</td>
+                    <td class="check-yes">✓</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">AI Strategist Coaching
+                        <div class="feature-description">Get proven strategies without guesswork</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-no">✗</td>
+                    <td class="check-no">✗</td>
+                </tr>
+                
+                <tr class="category">
+                    <td colspan="4">Goal Setting & Management</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Goals & KPI Scorecard
+                        <div class="feature-description">Define, track, and manage specific goals with live metrics</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-no">✗</td>
+                    <td class="check-partial">△</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">On-Demand & Customizable Reports
+                        <div class="feature-description">Generate real-time reports in multiple formats</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-yes">✓</td>
+                </tr>
+                <tr>
+                    <td class="feature-name">Business Performance Gamification
+                        <div class="feature-description">Turn metrics into friendly competition</div>
+                    </td>
+                    <td class="check-yes">✓</td>
+                    <td class="check-no">✗</td>
+                    <td class="check-no">✗</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="pricing-box">
+            <h2>Unbeatable Value</h2>
+            <p>Auty Scorecard Growth Plan (includes 5 users)</p>
+            <div class="price">$34 per month</div>
+            <p>Comparable solutions from competitors</p>
+            <div class="competitor-price">$12,000 per month</div>
+            <p><strong>Save over 99% with Auty Scorecard!</strong></p>
+        </div>
+        
+        <div class="benefits">
+            <div class="benefit-card">
+                <h3>Run Your Business From One Screen</h3>
+                <p>Unlike Qvinci and ProfitKeeper, Auty Scorecard's 360° Biz Snapshot integrates marketing, financial, and operational data in a single command center, eliminating data silos and blind spots.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Business Coach in Your Pocket</h3>
+                <p>While competitors focus solely on reporting, Auty Scorecard provides AI-powered strategic guidance drawing from 1,000+ business books and 7,000 curated prompt strategies.</p>
+            </div>
+            <div class="benefit-card">
+                <h3>Custom Dashboards in Minutes</h3>
+                <p>Our drag-and-drop Builder lets anyone create professional dashboards without technical skills, unlike Qvinci's limited customization and ProfitKeeper's pre-built templates.</p>
+            </div>
+        </div>
+        
+        <div class="guarantee">
+            <h2>Our 4-Point Guarantee</h2>
+            <ul>
+                <li><strong>1-Click Free Trial & Instant Access</strong> - No credit card required, sign up and get immediate access</li>
+                <li><strong>3-Minute Goal Alignment</strong> - Pick your priority, let AI define your strategy, and launch your Scorecard</li>
+                <li><strong>Tailored KPI Dashboard in 5 Minutes</strong> - Build your custom Scorecard with the metrics that matter most</li>
+                <li><strong>Human Support, Always</strong> - Chat with a real person within 5 minutes during business hours</li>
+            </ul>
+        </div>
+        
+        <div class="customer-quote">
+            "Auty Scorecard replaced six different tools we were using, saving us thousands per month while giving us better insights. The AI strategist feels like having a business coach on demand." - Sarah T., Multi-Location Business Owner
+        </div>
+    </div>
+</body>
+</html>
